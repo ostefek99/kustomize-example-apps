@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: nginx-example
-          image: 1.27-bookworm-perl # https://hub.docker.com/_/nginx/tags
+          image: nginx:1.27-bookworm-perl # https://hub.docker.com/_/nginx/tags
           ports:
             - containerPort: 80
           resources:
