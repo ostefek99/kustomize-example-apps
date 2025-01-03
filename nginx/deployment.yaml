@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-example
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-example
+  template:
+    metadata:
+      labels:
+        app: nginx-example
+    spec:
+      containers:
+        - name: nginx-example
+          image: 1.27-bookworm-perl # https://hub.docker.com/_/nginx/tags
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              cpu: "250m"
+              memory: "128Mi"
+            requests:
+              cpu: "50m"
+              memory: "64Mi"
